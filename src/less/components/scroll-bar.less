@@ -1,0 +1,33 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+.scroll-bar {
+  &.scroll-vertical {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  &.scroll-horizontal {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  //滑块宽（大小）
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  //轨道颜色
+  &::-webkit-scrollbar-track     {
+    background-color: #f6f7fa;
+  }
+  //滑块颜色
+  &::-webkit-scrollbar-thumb{
+    background-color: #9fa4b4;
+    border-radius: 8px;
+    &:hover {
+      background-color: #b0b7ca;
+    }
+    &:active {
+      background-color: #7c8397;
+    }
+  }
+}

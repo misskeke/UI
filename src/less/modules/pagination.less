@@ -1,0 +1,63 @@
+@import "../config/mixin";
+@import "../config/variable";
+
+.@{module-name}-pagination {
+  margin-top: 30px;
+
+  .pagination {
+    font-size: @smallFontSize;
+    .clearfix();
+  }
+
+  .pagination>li {
+    float: left;
+    margin-left: 5px;
+  }
+
+  .pagination>.active>a {
+    border: 1px solid @colorBlueMain;
+    background-color: @colorBlueMain;
+    color: @fontColorWhite;
+    &:hover {
+      color: @fontColorWhite;
+    }
+  }
+
+  .pagination>li>a {
+    .size(24px, 24px);
+    padding: 0;
+    border: 1px solid @borderColor;
+    border-radius: 2px;
+    background-color: @bgWhite;
+    text-align: center;
+    line-height: 24px;
+    color: @fontColorLight;
+    &:hover {
+      background-color: @colorBlueMain;
+      border: 1px solid @colorBlueMain;
+      color: @fontColorWhite;
+    }
+  }
+
+  .pagination>.disabled>a {
+    .size(60px, 24px);
+    border: 1px solid @borderColor;
+    border-radius: 2px;
+    line-height: 23px;
+    color: @fontColorLight;
+    &:hover {
+      background-color: @bgWhite;
+      border: 1px solid @borderColor;
+      color: @fontColorLight;
+    }
+    &:focus {
+      border: 1px solid @borderColor;
+      outline: none;
+    }
+  }
+
+  .pagination .pagination-next a, .pagination .pagination-prev a{
+    .size(60px, 24px);
+    line-height: 23px;
+  }
+}

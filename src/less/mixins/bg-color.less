@@ -1,0 +1,39 @@
+@import "../config/variable";
+
+.bg-color(@defaultColor, @hoverColor, @activeColor) {
+  background-color: @defaultColor;
+  &:hover {
+    background-color: @hoverColor;
+  }
+  &:active {
+    background-color: @activeColor;
+  }
+}
+
+.bg-green {
+  .bg-color(@greenDefaultColor, @greenHoverColor, @greenActiveColor);
+}
+
+.bg-blue {
+  .bg-color(@blueDefaultColor, @blueHoverColor, @blueActiveColor);
+}
+
+.bg-red {
+  .bg-color(@redDefaultColor, @redHoverColor, @redActiveColor);
+}
+
+.bg-yellow {
+  .bg-color(@yellowDefaultColor, @yellowHoverColor, @yellowActiveColor);
+}
+
+.bg-purple {
+  .bg-color(@purpleDefaultColor, @purpleHoverColor, @purpleActiveColor);
+}
+
+.bg-black {
+  .bg-color(@blackDefaultColor, @blackHoverColor, @blackActiveColor);
+}
+
+.bg-gray {
+  .bg-color(@lightGrayDefaultColor, @lightGrayHoverColor, @lightGrayActiveColor);
+}

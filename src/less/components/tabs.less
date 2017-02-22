@@ -1,0 +1,50 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+.@{module-name}-tab {
+  &.tab-nav {
+    border-bottom: 1px solid @borderColor;
+    .clearfix();
+  }
+  &.tab-content {
+    padding: 30px 20px 40px;
+    border: 1px solid @borderColor;
+    border-top-color: transparent;
+    background-color: @bgWhite;
+  }
+
+  .tab-item {
+    position: relative;
+    float: left;
+    margin-bottom: -1px;
+    &:hover {
+      .tab-title {
+        color: @colorBlueMain;
+      }
+    }
+    &.active {
+      border-bottom: 1px solid @bgWhite;
+      .tab-title {
+        border: 1px solid @borderColor;
+        border-bottom-color: transparent;
+        color: @colorBlueMain;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .tab-title {
+    position: relative;
+    bottom: -1px;
+    display: block;
+    min-width: 120px;
+    height: 36px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 3px 3px 0 0;
+    font-size: @fontSize;
+    line-height: 36px;
+    text-align: center;
+    color: @fontColorMain;
+  }
+}

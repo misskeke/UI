@@ -1,0 +1,35 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+.nav-tab {
+  border-bottom: 3px solid @colorBlueMain;
+  .clearfix();
+}
+
+.nav-tab-item {
+  position: relative;
+  float: left;
+  height: 30px;
+  padding: 0 27px 0 10px;
+  border-radius: 2px 2px 0 0;
+  line-height: 30px;
+  color: @fontColorMain;
+  .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+    padding: 8px 5px;
+    font-size: 8px;
+    line-height: 8px;
+    color: @fontColorWhite;
+  }
+  &:hover, &.active {
+    background-color: @colorBlueMain;
+    color: @fontColorWhite;
+    .icon {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,300 @@
+@import "../../src/less/config/reset";
+@import "../../src/less/config/variable";
+@import "../../src/less/config/mixin";
+
+.cloud-doc {
+  font-family: @fontFamily;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4d4e53;
+  //头部导航条
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    padding: 0 40px 0 60px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    .clearfix();
+  }
+
+  .nav-bar-left {
+    float: left;
+    .clearfix();
+    .svg-logo {
+      float: left;
+      height: 40px;
+      margin-top: 10px;
+      fill: #42b8f1;
+      vertical-align: text-bottom;
+      svg {
+        width: 40px;
+        margin-right: 5px;
+      }
+    }
+    h1 {
+      float: left;
+      font-family: "Helvetica" ,sans-serif;
+      font-size: @fontSizeH1;
+      line-height: 60px;
+      color: #606060;
+    }
+  }
+
+  .nav-bar-right {
+    float: right;
+    .clearfix();
+    li {
+      float: left;
+      font-size: @fontSize;
+      line-height: 60px;
+      &:hover, &.active {
+        transition: all 0.3s ease-out 0s;
+        a {
+          color: #00c0ff;
+        }
+      }
+      a {
+        display: block;
+        padding: 0 20px;
+        color: #999;
+      }
+    }
+  }
+
+  //侧边栏文档目录
+  .docs-index {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    padding: 60px 0;
+    border-right: 1px solid #f4f4f4;
+    background-color: #fcfcfc;
+    h3 {
+      padding-left: 60px;
+      margin-bottom: 20px;
+      font-size: @fontSizeH2;
+      color: #464646;
+    }
+    li {
+      width: 240px;
+      font-size: @fontSize;
+      line-height: 40px;
+      transition: all 0.3s ease-out 0s;
+      &:hover {
+        a {
+          color: #00c0ff;
+        }
+      }
+      a {
+        display: block;
+        padding-left: 60px;
+        color: #999;
+      }
+    }
+
+  }
+
+  //文档内容
+  .docs-content {
+    padding: 0 60px;
+    margin-left: 240px;
+  }
+
+  .color-blue {
+    color: #00c0ff;
+  }
+
+  .logo-box svg {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    fill: #00c0ff;
+  }
+
+  .cu-section {
+    text-align: center;
+  }
+
+  .cu-title {
+    margin-bottom: 15px;
+    font-family: "Helvetica" ,sans-serif;
+    font-size: 56px;
+    color: #606060;
+  }
+
+  .cu-describe {
+    font-size: @fontSizeH2;
+    color: #848484;
+  }
+
+  .cu-link {
+    margin-top: 40px;
+    margin-bottom: -80px;
+  }
+
+  .cu-link-item {
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 20px;
+    border: 1px solid #dadada;
+    background-color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    color: #00c0ff;
+    transition: all 0.3s ease-out 0s;
+    overflow: hidden;
+    &:hover {
+      border-radius: 20px;
+      border-color: #00c0ff;
+      background-color: #00c0ff;
+      color: #fff;
+    }
+  }
+
+  .cu-docs-section {
+    margin-bottom: 30px;
+  }
+
+  .docs-header {
+    padding: 90px 0 60px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #eee;
+    font-size: 28px;
+    color: #00c0ff;
+  }
+
+  .docs-intro {
+    margin-bottom: 20px;
+    .docs-intro-label {
+      margin-right: 10px;
+    }
+  }
+
+  .docs-example-box, .docs-code-box {
+    margin-bottom: 20px;
+  }
+
+  .docs-example-item {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .code-label {
+    padding: 2px 8px;
+    background-color: #f8f8f6;
+    color: #f96868;
+  }
+
+  //高亮源码样式
+  .pre {
+    margin: 0;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+    word-break: break-word;
+    .hljs {
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #999;
+      &:first-child {
+        display: inline-block;
+        margin-left: -180px;
+        padding-right: 45px;
+      }
+    }
+    .hljs-subst {
+      color: #999;
+    }
+    .hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+      font-weight: 100;
+      color: #069;
+    }
+    .hljs-attr {
+      color: #4f9fcf;
+    }
+    .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+      color: #d44950;
+    }
+    .hljs-comment {
+      color: #999;
+    }
+  }
+
+  .docs-table {
+    td {
+      padding: 15px 0 10px;
+    }
+  }
+
+  .scroll-box {
+    width: 800px;
+    height: 200px;
+    border: 1px solid @borderColor;
+  }
+
+  .scroll-content {
+    width: 1200px;
+    height: 800px;
+  }
+
+  .sub-menu-bar {
+    height: 400px;
+  }
+
+  //表单的使用
+  .form-group {
+    margin-bottom: 20px;
+    .clearfix();
+    .form-label, .textarea-label {
+      width: 84px;
+    }
+    .form-block {
+      float: left;
+      margin-right: 20px;
+    }
+    .radio-group {
+      width: 185px;
+      margin-left: 5px;
+    }
+    .radio-box {
+      margin-top: 4px;
+    }
+  }
+
+  //提示窗
+  .popover-example {
+    .clearfix();
+    .popover {
+      position: relative;
+      float: left;
+      display: block;
+      margin: 20px;
+      z-index: 0;
+    }
+  }
+  .content {
+    dl {
+      overflow: hidden;
+      dt, dd {
+        float: left;
+      }
+      dt {
+        width: 60px;
+        margin-right: 10px;
+        text-align: right;
+      }
+    }
+  }
+}

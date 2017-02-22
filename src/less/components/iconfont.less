@@ -1,0 +1,48 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+@font-face {font-family: "iconfont";
+  src: url('@{fontPath}iconfont.eot?t=1483952668733'); /* IE9*/
+  src: url('@{fontPath}iconfont.eot?t=1483952668733#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('@{fontPath}iconfont.woff?t=1483952668733') format('woff'), /* chrome, firefox */
+  url('@{fontPath}iconfont.ttf?t=1483952668733') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('@{fontPath}iconfont.svg?t=1483952668733#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.icon {
+  display: inline-block;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  text-align: center;
+  vertical-align: baseline;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.icon-primary {
+    border-radius: 3px;
+    font-size: 17px;
+    line-height: 24px;
+    color: @fontColorWhite;
+    .square(24px);
+  }
+  &.disabled {
+    color: @fontColorWhite;
+    cursor: not-allowed;
+  }
+}
+
+.icon-close:before { content: "\e61c"; }
+
+.icon-reply:before { content: "\e66a"; }
+
+.icon-search:before { content: "\e66b"; }
+
+.icon-close-circle:before { content: "\e66c"; }
+
+.icon-close-bg:before { content: "\e67f"; }
+
+.icon-pause:before { content: "\e687"; }
+
+.icon-trade-link:before { content: "\e6a5"; }
+
+.icon-calendar:before { content: "\e6af"; }

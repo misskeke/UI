@@ -1,0 +1,15 @@
+.flex-box() {
+  display: -webkit-box;
+  display: -moz-box; /* 老版本语法: Firefox (buggy) */
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-item(@fw){
+  -webkit-box-flex: @fw;
+  -moz-box-flex: @fw;
+  -webkit-flex: @fw;
+  -ms-flex: @fw;
+  flex: @fw;
+}

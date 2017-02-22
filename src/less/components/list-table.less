@@ -1,0 +1,67 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+//用ul模拟table
+.@{module-name}-list-table {
+  .list-thead, .list-tbody {
+    width: 100%;
+    font-size: @fontSize;
+    .list-td {
+      .flex-item(1);
+    }
+  }
+
+  .list-thead {
+    .flex-box();
+    height: 36px;
+    border-top: 1px solid @borderColor;
+    border-right: 1px solid @borderColor;
+    border-left: 1px solid @borderColor;
+    background-color: @bgTableHead;
+    line-height: 36px;
+    color: @colorGrayDark;
+    .list-td {
+      padding: 0 20px;
+    }
+  }
+
+  .list-tbody {
+    background-color: @bgWhite;
+    color: @fontTableMain;
+    .list-tr {
+      .flex-box();
+      height: 40px;
+      border-bottom: 1px solid @borderColor;
+      .transition();
+      &:hover {
+        background-color: @bgTableList;
+      }
+    }
+    .list-td {
+      height: 40px;
+      padding: 8px 20px;
+      border-right: 1px solid @borderColor;
+      line-height: 24px;
+      .word-break();
+      &:first-child {
+        border-left: 1px solid @borderColor;
+      }
+    }
+    .text-overflow {
+      .text-overflow;
+    }
+  }
+
+  &.list-center {
+    .list-td {
+      text-align: center;
+    }
+    .center-btns {
+      text-align: center;
+      .center-btn {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+

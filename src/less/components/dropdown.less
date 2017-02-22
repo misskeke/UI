@@ -1,0 +1,64 @@
+@import "../config/mixin";
+@import "../config/variable";
+
+//  表单输入块级样式
+.dropdown-box {
+  position: relative;
+  .select-box {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 20px;
+    border: 1px solid @borderColor;
+    border-radius: 1px;
+    line-height: 36px;
+    box-sizing: border-box;
+    font-size: @fontSize;
+    color: @fontColorMain;
+    &:hover {
+      border-color: @colorBlueLight;
+    }
+    &:active {
+      border-color: @colorBlueDark;
+    }
+    .size(300px, 36px);
+    .triangle-downward {
+      position: absolute;
+      top: 14px;
+      right: 10px;
+    }
+    .select-text {
+      .text-overflow();
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid @borderColor;
+    border-top: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+    .select-item {
+      padding: 0 10px;
+      border-top: 1px solid @borderColor;
+      line-height: 36px;
+      color: @fontColorDark;
+      .transition();
+      &:first-child {
+        border-top: none;
+      }
+      &:hover {
+        background-color: @colorBlueMain;
+        color: @fontColorWhite;
+      }
+      .select-item-text {
+        .text-overflow();
+      }
+    }
+  }
+}
+

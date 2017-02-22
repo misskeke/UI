@@ -1,0 +1,479 @@
+/**
+ * 用途: 重置css默认样式
+ * 作者: kezh
+ * 日期: 2017/01/13
+ * 说明: 本reset文件只重置项目中使用到的标签的样式
+ * 由于本项目引用了bootstrap.css,因此和bootstrap.css中重复的部分将省略
+ * 同时bootstrap.css中需要重置的公共样式也在此设置
+ */
+html {
+  font-family: "微软雅黑", Tahoma, Arial, "Hiragino Sans GB", sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+form,
+fieldset,
+button,
+input,
+select,
+ul,
+ol,
+dl,
+dd,
+hr {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+i,
+em,
+b,
+strong,
+th,
+dt {
+  font-weight: 100;
+}
+i,
+em {
+  font-style: normal;
+}
+button,
+input {
+  font-family: "微软雅黑", Tahoma, Arial, "Hiragino Sans GB", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a:active,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+input:focus {
+  border: 1px solid #71aff6;
+}
+select {
+  border: none;
+  outline: none;
+}
+select:focus,
+select:active {
+  outline: none;
+}
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-x: hidden;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.bg-green {
+  background-color: #50c14e;
+}
+.bg-green:hover {
+  background-color: #56d954;
+}
+.bg-green:active {
+  background-color: #3eb53c;
+}
+.bg-blue {
+  background-color: #5093e1;
+}
+.bg-blue:hover {
+  background-color: #71aff6;
+}
+.bg-blue:active {
+  background-color: #3978c2;
+}
+.bg-red {
+  background-color: #f65177;
+}
+.bg-red:hover {
+  background-color: #ff688b;
+}
+.bg-red:active {
+  background-color: #d73a5e;
+}
+.bg-yellow {
+  background-color: #ffcf76;
+}
+.bg-yellow:hover {
+  background-color: #ffdd9d;
+}
+.bg-yellow:active {
+  background-color: #e2ae4f;
+}
+.bg-purple {
+  background-color: #492a8b;
+}
+.bg-purple:hover {
+  background-color: #6f46C7;
+}
+.bg-purple:active {
+  background-color: #33176d;
+}
+.bg-black {
+  background-color: #2d313a;
+}
+.bg-black:hover {
+  background-color: #515766;
+}
+.bg-black:active {
+  background-color: #08090c;
+}
+.bg-gray {
+  background-color: #d4d4d4;
+}
+.bg-gray:hover {
+  background-color: #b1b7ca;
+}
+.bg-gray:active {
+  background-color: #7c8397;
+}
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cloud-doc {
+  font-family: "微软雅黑", Tahoma, Arial, "Hiragino Sans GB", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4d4e53;
+}
+.cloud-doc .nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  padding: 0 40px 0 60px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.cloud-doc .nav-bar:before,
+.cloud-doc .nav-bar:after {
+  content: " ";
+  display: table;
+}
+.cloud-doc .nav-bar:after {
+  clear: both;
+}
+.cloud-doc .nav-bar-left {
+  float: left;
+}
+.cloud-doc .nav-bar-left:before,
+.cloud-doc .nav-bar-left:after {
+  content: " ";
+  display: table;
+}
+.cloud-doc .nav-bar-left:after {
+  clear: both;
+}
+.cloud-doc .nav-bar-left .svg-logo {
+  float: left;
+  height: 40px;
+  margin-top: 10px;
+  fill: #42b8f1;
+  vertical-align: text-bottom;
+}
+.cloud-doc .nav-bar-left .svg-logo svg {
+  width: 40px;
+  margin-right: 5px;
+}
+.cloud-doc .nav-bar-left h1 {
+  float: left;
+  font-family: "Helvetica", sans-serif;
+  font-size: 24px;
+  line-height: 60px;
+  color: #606060;
+}
+.cloud-doc .nav-bar-right {
+  float: right;
+}
+.cloud-doc .nav-bar-right:before,
+.cloud-doc .nav-bar-right:after {
+  content: " ";
+  display: table;
+}
+.cloud-doc .nav-bar-right:after {
+  clear: both;
+}
+.cloud-doc .nav-bar-right li {
+  float: left;
+  font-size: 14px;
+  line-height: 60px;
+}
+.cloud-doc .nav-bar-right li:hover,
+.cloud-doc .nav-bar-right li.active {
+  transition: all 0.3s ease-out 0s;
+}
+.cloud-doc .nav-bar-right li:hover a,
+.cloud-doc .nav-bar-right li.active a {
+  color: #00c0ff;
+}
+.cloud-doc .nav-bar-right li a {
+  display: block;
+  padding: 0 20px;
+  color: #999;
+}
+.cloud-doc .docs-index {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  padding: 60px 0;
+  border-right: 1px solid #f4f4f4;
+  background-color: #fcfcfc;
+}
+.cloud-doc .docs-index h3 {
+  padding-left: 60px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #464646;
+}
+.cloud-doc .docs-index li {
+  width: 240px;
+  font-size: 14px;
+  line-height: 40px;
+  transition: all 0.3s ease-out 0s;
+}
+.cloud-doc .docs-index li:hover a {
+  color: #00c0ff;
+}
+.cloud-doc .docs-index li a {
+  display: block;
+  padding-left: 60px;
+  color: #999;
+}
+.cloud-doc .docs-content {
+  padding: 0 60px;
+  margin-left: 240px;
+}
+.cloud-doc .color-blue {
+  color: #00c0ff;
+}
+.cloud-doc .logo-box svg {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  fill: #00c0ff;
+}
+.cloud-doc .cu-section {
+  text-align: center;
+}
+.cloud-doc .cu-title {
+  margin-bottom: 15px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 56px;
+  color: #606060;
+}
+.cloud-doc .cu-describe {
+  font-size: 18px;
+  color: #848484;
+}
+.cloud-doc .cu-link {
+  margin-top: 40px;
+  margin-bottom: -80px;
+}
+.cloud-doc .cu-link-item {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  margin: 0 10px;
+  border-radius: 20px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  color: #00c0ff;
+  transition: all 0.3s ease-out 0s;
+  overflow: hidden;
+}
+.cloud-doc .cu-link-item:hover {
+  border-radius: 20px;
+  border-color: #00c0ff;
+  background-color: #00c0ff;
+  color: #fff;
+}
+.cloud-doc .cu-docs-section {
+  margin-bottom: 30px;
+}
+.cloud-doc .docs-header {
+  padding: 90px 0 60px;
+  margin-bottom: 30px;
+  border-bottom: 1px dotted #eee;
+  font-size: 28px;
+  color: #00c0ff;
+}
+.cloud-doc .docs-intro {
+  margin-bottom: 20px;
+}
+.cloud-doc .docs-intro .docs-intro-label {
+  margin-right: 10px;
+}
+.cloud-doc .docs-example-box,
+.cloud-doc .docs-code-box {
+  margin-bottom: 20px;
+}
+.cloud-doc .docs-example-item {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.cloud-doc .code-label {
+  padding: 2px 8px;
+  background-color: #f8f8f6;
+  color: #f96868;
+}
+.cloud-doc .pre {
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background-color: #f8f8f8;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: nowrap;
+  word-break: break-word;
+}
+.cloud-doc .pre .hljs {
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #999;
+}
+.cloud-doc .pre .hljs:first-child {
+  display: inline-block;
+  margin-left: -180px;
+  padding-right: 45px;
+}
+.cloud-doc .pre .hljs-subst {
+  color: #999;
+}
+.cloud-doc .pre .hljs-keyword,
+.cloud-doc .pre .hljs-attribute,
+.cloud-doc .pre .hljs-selector-tag,
+.cloud-doc .pre .hljs-meta-keyword,
+.cloud-doc .pre .hljs-doctag,
+.cloud-doc .pre .hljs-name {
+  font-weight: 100;
+  color: #069;
+}
+.cloud-doc .pre .hljs-attr {
+  color: #4f9fcf;
+}
+.cloud-doc .pre .hljs-type,
+.cloud-doc .pre .hljs-string,
+.cloud-doc .pre .hljs-number,
+.cloud-doc .pre .hljs-selector-id,
+.cloud-doc .pre .hljs-selector-class,
+.cloud-doc .pre .hljs-quote,
+.cloud-doc .pre .hljs-template-tag,
+.cloud-doc .pre .hljs-deletion {
+  color: #d44950;
+}
+.cloud-doc .pre .hljs-comment {
+  color: #999;
+}
+.cloud-doc .docs-table td {
+  padding: 15px 0 10px;
+}
+.cloud-doc .scroll-box {
+  width: 800px;
+  height: 200px;
+  border: 1px solid #e2e4ea;
+}
+.cloud-doc .scroll-content {
+  width: 1200px;
+  height: 800px;
+}
+.cloud-doc .sub-menu-bar {
+  height: 400px;
+}
+.cloud-doc .form-group {
+  margin-bottom: 20px;
+}
+.cloud-doc .form-group:before,
+.cloud-doc .form-group:after {
+  content: " ";
+  display: table;
+}
+.cloud-doc .form-group:after {
+  clear: both;
+}
+.cloud-doc .form-group .form-label,
+.cloud-doc .form-group .textarea-label {
+  width: 84px;
+}
+.cloud-doc .form-group .form-block {
+  float: left;
+  margin-right: 20px;
+}
+.cloud-doc .form-group .radio-group {
+  width: 185px;
+  margin-left: 5px;
+}
+.cloud-doc .form-group .radio-box {
+  margin-top: 4px;
+}
+.cloud-doc .popover-example:before,
+.cloud-doc .popover-example:after {
+  content: " ";
+  display: table;
+}
+.cloud-doc .popover-example:after {
+  clear: both;
+}
+.cloud-doc .popover-example .popover {
+  position: relative;
+  float: left;
+  display: block;
+  margin: 20px;
+  z-index: 0;
+}
+.cloud-doc .content dl {
+  overflow: hidden;
+}
+.cloud-doc .content dl dt,
+.cloud-doc .content dl dd {
+  float: left;
+}
+.cloud-doc .content dl dt {
+  width: 60px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+/*# sourceMappingURL=cloud-doc.css.map */

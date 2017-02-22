@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>cloudUI组件使用说明</title>
+    <!--Bootstrap 核心 CSS 文件-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Cloud-UI 核心 CSS 文件-->
+    <link rel="stylesheet" href="../dist/css/cloud-ui.min.css">
+    <link rel="stylesheet" href="css/cloud-doc.css">
+    <link rel="stylesheet" href="css/default.css">
+</head>
+<body class="cloud-doc" ng-app="cloudApp">
+<nav class="nav-bar">
+    <a class="nav-bar-left" href="start.html">
+        <div class="svg-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs></defs><title>云纪管理端UI框架Cloud-broker-UI</title><path class="cls-1" d="M17.87,26l1.4-1.3h4.1c3.63.16,5-1.82,5.65-4.22a6,6,0,0,0-2.49-6.89,2.16,2.16,0,0,0-3.16.41l-6.11,9H14.6s-4.06-6.24-4.23-6.52c1,0,1.88,0,2.76,0L16,20.64l3.83-5.83a6.63,6.63,0,0,1,3.68-3A6.31,6.31,0,0,1,30.34,14a7.85,7.85,0,0,1,1.54,6.46A6.73,6.73,0,0,1,26.07,26Z"/><path class="cls-1" d="M.32,16.37c.87-3.14,4.06-5,7.31-5a8.18,8.18,0,0,1,6.63-5.31c6.49-.73,9,3.53,9,3.53l-1.65,1a7.23,7.23,0,0,0-5.51-2.52C10.79,7.8,8.8,12.66,8.8,12.66A6,6,0,0,0,6.94,24.42a11.64,11.64,0,0,0,1.88.27h3.93L14.15,26H6c-.14-.07-4.21,0-5.62-5A8.46,8.46,0,0,1,.32,16.37Z"/><circle class="cls-2" cx="16.04" cy="12.77" r="1.82"/><polygon class="cls-1" points="16.71 15.23 15.37 15.23 14.89 17.85 16.03 19.27 17.18 17.85 16.71 15.23"/></svg>
+        </div>
+        <h1>Cloud-UI</h1>
+    </a>
+    <ul class="nav-bar-right">
+        <li><a href="style.html">样式</a></li>
+        <li class="active"><a href="component.html">组件</a></li>
+    </ul>
+</nav>
+<div class="docs-container">
+    <div class="docs-index">
+        <h3>文档目录</h3>
+        <ol>
+            <li><a href="#tab">Tab切换</a></li>
+            <li><a href="#modal">模态框</a></li>
+            <li><a href="#popover">弹出框</a></li>
+            <li><a href="#dropdown">下拉框</a></li>
+            <li><a href="#pagination">分页</a></li>
+            <li><a href="#datepicker">日历</a></li>
+            <li><a href="#chart">图表</a></li>
+        </ol>
+    </div>
+    <div class="docs-content">
+        <!--Tab切换-->
+        <div id="tab" class="cu-docs-section">
+            <h3 class="docs-header">Tab切换</h3>
+            <p class="docs-intro">Tab切换使用 <span class="code-label">Bootstrap</span>的 <span class="code-label">Togglable tabs</span>插件。</p>
+            <p class="docs-intro color-blue">示例</p>
+            <div class="docs-example-box">
+                <ul id="myTab" class="cloud-ui-tab tab-nav" role="tablist">
+                    <li class="tab-item active" role="presentation"><a class="tab-title " href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">投顾管理</a></li>
+                    <li class="tab-item" role="presentation"><a class="tab-title" href="#tab2" aria-controls="tab2" role="tab"  data-toggle="tab">角色管理</a></li>
+                </ul>
+                <div class="cloud-ui-tab tab-content">
+                    <div id="tab1" class="tab-pane fade active" role="tabpanel">tab1的内容</div>
+                    <div id="tab2" class="tab-pane fade" role="tabpanel">tab2的内容</div>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="html">
+                            &lt;!-- 切换导航 -->
+                            &lt;ul id="myTab" class="cloud-ui-tab tab-nav" role="tablist">
+                                &lt;li class="tab-item active" role="presentation">
+                                    &lt;a class="tab-title " href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">投顾管理&lt;/a>
+                                &lt;/li>
+                                &lt;li class="tab-item" role="presentation">
+                                    &lt;a class="tab-title" href="#tab2" aria-controls="tab2" role="tab"  data-toggle="tab">角色管理&lt;/a>
+                                &lt;/li>
+                            &lt;/ul>
+
+                            &lt;!-- 切换内容 -->
+                            &lt;div class="cloud-ui-tab tab-content">
+                                &lt;div id="tab1" class="tab-pane fade active" role="tabpanel">tab1的内容&lt;/div>
+                                &lt;div id="tab2" class="tab-pane fade" role="tabpanel">tab2的内容&lt;/div>
+                            &lt;/div>
+                        </code>
+                    </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <p class="docs-intro">每一个 Tab 都需要单独定义</p>
+            <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="javascript">
+                            $('#myTab a').click(function (e) {
+                                e.preventDefault();
+                                $(this).tab('show')
+                            });
+                        </code>
+                    </pre>
+            </div>
+        </div>
+        <!--模态框-->
+        <div id="modal" class="cu-docs-section">
+            <h3 class="docs-header">模态框</h3>
+            <p class="docs-intro">不需写 JavaScript 代码也可激活模态框。给需要触发模态窗的元素（例如：按钮）添加 <span class="code-label">data-toggle="modal"</span> 属性和 <span class="code-label">data-target="#myModal"</span> 属性，就可以激活一个 <span class="code-label">id="myModal"</span> 的模态框。</p>
+            <p class="docs-intro">务必将模态框的 HTML 代码放在文档的最高层级内，也就是说，尽量作为 <span class="code-label">body</span> 标签的直接子元素，以避免其他组件影响模态框的展现或功能。</p>
+            <p class="docs-intro">此外，不支持同时打开多个模态框。千万不要在一个模态框上重叠另一个模态框。要想同时支持多个模态框，需要自己写额外的代码来实现。</p>
+            <p class="docs-intro">为了避免样式冲突，需在最外层添加 <span class="code-label">.cloud-ui-modal</span> 类。</p>
+            <p class="docs-intro color-blue">样式</p>
+            <div class="docs-example-box">
+                <button class="btn-big bg-green" type="button" data-toggle="modal" data-target="#modalNormal">常规模态框</button>
+                <button class="btn-big bg-green" type="button" data-toggle="modal" data-target="#modalSmall">小模态框</button>
+                <button class="btn-big bg-green" type="button" data-toggle="modal" data-target="#modalBig">大模态框</button>
+                <button class="btn-big bg-blue" type="button" data-toggle="modal" data-target="#modalAdaptive">自适应模态框</button>
+            </div>
+            <p class="docs-intro color-blue">模态框基础 html 结构</p>
+            <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="html">
+                            &lt;!-- 点击触发模态框的按钮 -->
+                            &lt;button class="btn-big bg-green" type="button" data-toggle="modal" data-target="#modalNormal">常规模态框&lt;/button>
+
+                            &lt;!-- 模态框基础结构 -->
+                            &lt;div class="modal fade cloud-ui-modal" id="modalNormal"
+                            tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                &lt;div class="modal-center">
+                                    &lt;div class="modal-dialog modal-normal">
+                                        &lt;div class="modal-content" role="document">
+                                            &lt;!-- 模态框头部 -->
+                                            &lt;div class="header">
+                                                &lt;h2 class="modal-title" id="myModalLabel">新增组织机构&lt;/h2>
+                                                &lt;i class="icon icon-close-circle" data-dismiss="modal">&lt;/i>
+                                            &lt;/div>
+
+                                            &lt;!-- 模态框内容主体 -->
+                                            &lt;div class="body">
+                                                &lt;div>这里是内容&lt;/div>
+                                            &lt;/div>
+
+                                            &lt;!-- 模态框底部按钮 -->
+                                            &lt;div class="footer">
+                                                &lt;div class="btn-box">
+                                                    &lt;button class="btn-big bg-green" type="button" data-dismiss="modal">保存&lt;/button>
+                                                &lt;/div>
+                                            &lt;/div>
+                                        &lt;/div>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        </code>
+                    </pre>
+            </div>
+            <p class="docs-intro">在 <span class="code-label">.modal-dialog</span> 类的基础上添加不同的类来定义不同大小的模态窗。</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="html">
+                        &lt;div class="modal fade cloud-ui-modal" id="modalNormal"
+                                tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            &lt;div class="modal-center">
+                                &lt;!-- 常规模态框 -->
+                                &lt;div class="modal-dialog modal-normal">
+                                    &lt;div class="modal-content" role="document">&lt;/div>
+                                &lt;/div>
+
+                                &lt;!-- 小模态框 -->
+                                &lt;div class="modal-dialog modal-small">
+                                    &lt;div class="modal-content" role="document">&lt;/div>
+                                &lt;/div>
+
+                                &lt;!-- 大模态框 -->
+                                &lt;div class="modal-dialog modal-big">
+                                    &lt;div class="modal-content" role="document">&lt;/div>
+                                &lt;/div>
+
+                                &lt;!-- 自适应模态框 -->
+                                &lt;div class="modal-dialog modal-adaptive">
+                                    &lt;div class="modal-content" role="document">&lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <!--弹出框-->
+        <div id="popover" class="cu-docs-section">
+            <h3 class="docs-header">弹出框</h3>
+            <p class="docs-intro">弹出框使用 <span class="code-label">Bootstrap</span> 的 <span class="code-label">popover</span> 插件。在需要出发弹出框的元素上添加相应的属性来实现。通过设置 <span class="code-label">data-placement</span> 的属性(bottom, top, right, left)来定义弹出框的显示位置。
+                通过设置 <span class="code-label">data-trigger</span> 的属性(focus, click, hover)来定义弹出框弹出的方式。弹出框中的内容可通过 <span class="code-label">data-template</span> 属性来设置，简单的内容可直接设置为 <span class="code-label">data-content</span> 属性中的值。
+                如果设置 <span class="code-label">data-template</span> 属性为 <span class="code-label">content</span> ，则将会替换 <span class="code-label">data-content</span> 。</p>
+            <p class="docs-intro color-blue">样式</p>
+            <div class="docs-example-box popover-example">
+                <div class="popover bottom">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                        <dl><dt>性质:</dt><dd>机构</dd></dl>
+                        <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                        <dl><dt>备注:</dt><dd>客户</dd></dl>
+                    </div>
+                </div>
+                <div class="popover top">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                        <dl><dt>性质:</dt><dd>机构</dd></dl>
+                        <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                        <dl><dt>备注:</dt><dd>客户</dd></dl>
+                    </div>
+                </div>
+                <div class="popover left">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                        <dl><dt>性质:</dt><dd>机构</dd></dl>
+                        <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                        <dl><dt>备注:</dt><dd>客户</dd></dl>
+                    </div>
+                </div>
+                <div class="popover right">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                        <dl><dt>性质:</dt><dd>机构</dd></dl>
+                        <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                        <dl><dt>备注:</dt><dd>客户</dd></dl>
+                    </div>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">点击触发元素（比如按钮）显示弹出框，点击触发元素以外的地方弹出框消失。</p>
+            <p class="docs-intro">通过设置 <span class="code-label">data-trigger="focus"</span> 实现。</p>
+            <div class="docs-example-box">
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="focus"
+                        data-placement="top" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>上部弹出</button>
+
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="focus"
+                        data-placement="bottom" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>下部弹出</button>
+
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="focus"
+                        data-placement="right" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>右侧侧弹出</button>
+
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="focus"
+                        data-placement="left" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>左侧弹出</button>
+            </div>
+            <p class="docs-intro color-blue">鼠标经过时显示弹出框</p>
+            <p class="docs-intro">通过设置 <span class="code-label">data-trigger="hover"</span> 实现。</p>
+            <div class="docs-example-box">
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="hover"
+                        data-placement="bottom" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>鼠标经过时显示弹出框</button>
+            </div>
+            <p class="docs-intro color-blue">点击触发元素（比如按钮）显示弹出框，再次点击弹出框消失。</p>
+            <p class="docs-intro">通过设置 <span class="code-label">data-trigger="click"</span> 实现。</p>
+            <div class="docs-example-box">
+                <button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="click"
+                        data-placement="bottom" data-content="content" data-template='<div class="popover"><div class="arrow"></div>
+                            <div class="content">
+                                <dl><dt>机构名称:</dt><dd>中华投资机构</dd></dl>
+                                <dl><dt>性质:</dt><dd>机构</dd></dl>
+                                <dl><dt>资产规模:</dt><dd>100000万</dd></dl>
+                                <dl><dt>备注:</dt><dd>客户</dd></dl>
+                            </div></div>'>点击弹出/隐藏弹出框
+                </button>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="code">
+                        &lt;!--弹出框模板-->
+                        &lt;div class="popover">
+                            &lt;div class="arrow">&lt;/div>
+                            &lt;div class="content">
+                                &lt;!--内容-->
+                            &lt;/div>
+                        &lt;/div>
+
+                        &lt;!--点击触发元素（比如按钮）显示弹出框，点击触发元素以外的地方弹出框消失 -->
+                        &lt;button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="focus"
+                                    data-placement="top" data-content="content"
+                                    data-template='&lt;div class="popover">&lt;div class="arrow">&lt;/div>
+                                    &lt;div class="content">
+                                    &lt;dl>&lt;dt>机构名称:&lt;/dt>&lt;dd>中华投资机构&lt;/dd>&lt;/dl>
+                                    &lt;dl>&lt;dt>性质:&lt;/dt>&lt;dd>机构&lt;/dd>&lt;/dl>
+                                    &lt;dl>&lt;dt>资产规模:&lt;/dt>&lt;dd>100000万&lt;/dd>&lt;/dl>
+                                    &lt;dl>&lt;dt>备注:&lt;/dt>&lt;dd>客户&lt;/dd>&lt;/dl>
+                                    &lt;/div>&lt;/div>'>上部弹出&lt;/button>
+
+                        &lt;!--鼠标经过时显示弹出框 -->
+                        &lt;button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="hover"
+                                    data-placement="bottom" data-content="content"
+                                    data-template=''>鼠标经过时显示弹出框&lt;/button>
+
+                        &lt;!--点击触发元素（比如按钮）显示弹出框，再次点击弹出框消失 -->
+                        &lt;button class="btn-big bg-blue" type="button" data-toggle="popover" data-trigger="click"
+                                    data-placement="bottom" data-content="content"
+                                    data-template=''>点击弹出/隐藏弹出框&lt;/button>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="javascript">
+                        $(function () {
+                            $('[data-toggle="popover"]').popover()
+                        })
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <!--下拉框-->
+        <div id="dropdown" class="cu-docs-section">
+            <h3 class="docs-header">下拉框</h3>
+            <p class="docs-intro">下拉框插件统一使用 <span class="code-label">AngularUI</span>的 <span class="code-label">Dropdown</span> ，官方文档地址：<a class="color-blue" href="https://github.com/angular-ui/bootstrap/tree/master/src/dropdown">https://github.com/angular-ui/bootstrap/tree/master/src/dropdown</a>，参考文章地址：<a class="color-blue" href="http://www.cnblogs.com/pilixiami/p/5636218.html">http://www.cnblogs.com/pilixiami/p/5636218.html</a>。</p>
+            <p class="docs-intro color-blue">示例</p>
+            <div class="docs-example-box">
+                <div ng-controller="DropdownController">
+                    <div class="dropdown-box" uib-dropdown>
+                        <div class="select-box" uib-dropdown-toggle><i class="triangle-downward"></i><p class="select-text js-select-text">请选择</p></div>
+                        <ul class="dropdown-menu" uib-dropdown-menu>
+                            <li class="select-item" ng-repeat="item in items" ng-click="chooseItem(this)"><p class="select-item-text" title="{{item}}">{{item}}</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="code">
+                        &lt;div ng-controller="DropdownController">
+                            &lt;div class="dropdown-box" uib-dropdown>
+                                &lt;div class="select-box" uib-dropdown-toggle>
+                                    &lt;i class="triangle-downward">&lt;/i>
+                                    &lt;p class="select-text js-select-text">请选择&lt;/p>
+                                &lt;/div>
+                                &lt;ul class="dropdown-menu" uib-dropdown-menu>
+                                    &lt;li class="select-item" ng-repeat="item in items" ng-click="chooseItem(this)">
+                                        &lt;p class="select-item-text" title="{{item}}">{{item}}&lt;/p>
+                                    &lt;/li>
+                                &lt;/ul>
+                            &lt;/div>
+                        &lt;/div>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <p class="docs-intro">在 <code class="code-label">controller</code> 中定义下拉列表的内容：</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="javascript">
+                        var app = angular.module('cloudApp', ['ui.bootstrap']);
+
+                        app.controller('DropdownController', function($scope) {
+                            $scope.items = [
+                                '第一项',
+                                '第二项',
+                                '第三项第三项第三项第三项第三项第三项第三项第三项第三项第三项第三项',
+                                '第四项',
+                                '第五项'
+                                ];
+
+                            //显示为选中内容
+                            $scope.chooseItem = function(){
+                                var sText = this.item;
+
+                                $(".js-select-text").text(sText);
+                            };
+                        });
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro">Dropdown 中可以使用的属性有：</p>
+            <div class="docs-example-box">
+                <table class="cloud-ui-table" width="100%" cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:60%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>默认值</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>auto-close</td>
+                        <td>always</td>
+                        <td>
+                            <p>可设置的值有三个：</p>
+                            <p>always：点击菜单后自动关闭。</p>
+                            <p>disabled：不自动关闭，使用is-open手动控制。</p>
+                            <p>outsideClick：点击Dropdown外部的元素时关闭。</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>dropdown-append-to</td>
+                        <td>null</td>
+                        <td>将菜单项（ul部分）放在其他DOM元素中，而不是包含在uib-dropdown所在的元素中。</td>
+                    </tr>
+                    <tr>
+                        <td>dropdown-append-to-body</td>
+                        <td>false</td>
+                        <td>将菜单项（ul部分）放在body末尾，而不是包含在uib-dropdown所在的元素中。</td>
+                    </tr>
+                    <tr>
+                        <td>is-open</td>
+                        <td>false</td>
+                        <td>菜单是否展开。uib-dropdown-toggle所在的元素点击时会更改这个值。</td>
+                    </tr>
+                    <tr>
+                        <td>keyboard-nav</td>
+                        <td>false</td>
+                        <td>是否允许方向键选择菜单。</td>
+                    </tr>
+                    <tr>
+                        <td>on-toggle</td>
+                        <td></td>
+                        <td>菜单展开或收起时触发的方法。</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--分页-->
+        <div id="pagination" class="cu-docs-section">
+            <h3 class="docs-header">分页</h3>
+            <p class="docs-intro">分页插件统一使用 <span class="code-label">AngularUI</span>的 <span class="code-label">Pagination</span>，官方文档地址：<a class="color-blue" href="https://github.com/angular-ui/bootstrap/tree/master/src/pagination">https://github.com/angular-ui/bootstrap/tree/master/src/pagination</a>，参考文章地址：<a class="color-blue" href="http://www.cnblogs.com/pilixiami/p/5634405.html">http://www.cnblogs.com/pilixiami/p/5634405.html</a>。</p>
+            <p class="docs-intro">为了避免样式冲突，需在最外层添加 <span class="code-label">.cloud-ui-pagination</span> 类。</p>
+            <p class="docs-intro color-blue">示例</p>
+            <div class="docs-example-box">
+                <div class="cloud-ui-pagination"  ng-controller="PaginationController">
+                    <ul uib-pagination ng-model="currentPage" total-items="totalItems" max-size="maxSize"
+                        previous-text="上一页" next-text="下一页" boundary-links="false" boundary-link-numbers="true"></ul>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="html">
+                        &lt;div class="cloud-ui-pagination"  ng-controller="PaginationController">
+                            &lt;ul uib-pagination ng-model="currentPage" total-items="totalItems" max-size="maxSize"
+                                previous-text="上一页" next-text="下一页" boundary-links="false"
+                                boundary-link-numbers="true">&lt;/ul>
+                        &lt;/div>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="javascript">
+                        app.controller('PaginationController', function($scope) {
+                            $scope.maxSize = 5;
+                            $scope.totalItems = 120;
+                            $scope.currentPage = 1;
+                        });
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro">Pagination中可以使用的属性有：</p>
+            <div class="docs-example-box">
+                <table class="cloud-ui-table" width="100%" cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:60%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>默认值</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>boundary-links</td>
+                        <td>false</td>
+                        <td>是否显示第一页和最后一页的按钮</td>
+                    </tr>
+                    <tr>
+                        <td>boundary-link-numbers</td>
+                        <td>false</td>
+                        <td>是否显示第一页和最后一页的页数,并在页数过多时用…表示被隐藏的页数</td>
+                    </tr>
+                    <tr>
+                        <td>direction-links</td>
+                        <td>true</td>
+                        <td>是否显示上一页和下一页的按钮</td>
+                    </tr>
+                    <tr>
+                        <td>first-text</td>
+                        <td>first</td>
+                        <td>第一页的按钮的名字</td>
+                    </tr>
+                    <tr>
+                        <td>last-text</td>
+                        <td>last</td>
+                        <td>最后一页的按钮名字</td>
+                    </tr>
+                    <tr>
+                        <td>previous-text</td>
+                        <td>Previous</td>
+                        <td>上一页的按钮名字</td>
+                    </tr>
+                    <tr>
+                        <td>next-text</td>
+                        <td>Next</td>
+                        <td>下一页的按钮名字</td>
+                    </tr>
+                    <tr>
+                        <td>force-ellipses</td>
+                        <td>false</td>
+                        <td>是否在rotate被设置为true并且页数过多时显示为"…"</td>
+                    </tr>
+                    <tr>
+                        <td>rotate</td>
+                        <td>true</td>
+                        <td>是否保持当前在可视范围的中间</td>
+                    </tr>
+                    <tr>
+                        <td>items-per-page</td>
+                        <td>10</td>
+                        <td>每页显示的数量.设置值小于1表示显示所有项</td>
+                    </tr>
+                    <tr>
+                        <td>max-size</td>
+                        <td>null</td>
+                        <td>可选择的页数范围(如果设置为5,当前页为10,总页数为100,那么可选择第8,9,10,11,12页)</td>
+                    </tr>
+                    <tr>
+                        <td>ng-change</td>
+                        <td></td>
+                        <td>页数变化时调用的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ng-disabled</td>
+                        <td>false</td>
+                        <td>是否禁用</td>
+                    </tr>
+                    <tr>
+                        <td>ng-model</td>
+                        <td></td>
+                        <td>当前页数</td>
+                    </tr>
+                    <tr>
+                        <td>num-pages</td>
+                        <td>angular.noop</td>
+                        <td>只读属性，表示总页数</td>
+                    </tr>
+                    <tr>
+                        <td>page-label</td>
+                        <td>angular.identity</td>
+                        <td>设置页数标签的表达式</td>
+                    </tr>
+                    <tr>
+                        <td>total-items</td>
+                        <td></td>
+                        <td>总共有多少条数据</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--日历-->
+        <div id="datepicker" class="cu-docs-section">
+            <h3 class="docs-header">日历</h3>
+            <p class="docs-intro">日历插件统一使用 <span class="code-label">AngularJs</span>的UI组件 <span class="code-label">UI-Bootstrap</span>中的 <span class="code-label">Datepicker Popup</span>，官方文档地址：<a class="color-blue" href="https://github.com/angular-ui/bootstrap/tree/master/src/datepickerPopup">https://github.com/angular-ui/bootstrap/tree/master/src/datepickerPopup</a>，参考文章地址：<a class="color-blue" href="http://www.cnblogs.com/pilixiami/p/5611346.html">http://www.cnblogs.com/pilixiami/p/5611346.html</a>。</p>
+            <p class="docs-intro">让控件显示为中文需要额外引入 <span class="code-label">angular-locale_zh-cn.js</span>  文件。</p>
+            <p class="docs-intro">为了避免样式冲突，需在最外层添加 <span class="code-label">.cloud-ui-datepicker</span> 类。</p>
+            <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="html">
+                            &lt;!-- 中文国际化文件 angular-locale_zh-cn.js -->
+                            &lt;script type="text/javascript" src="js/angular-locale_zh-cn.js">&lt;/script>
+                        </code>
+                    </pre>
+            </div>
+            <p class="docs-intro color-blue">示例</p>
+            <div class="docs-example-box">
+                <div class="cloud-ui-datepicker" ng-controller="DatepickerPopupController">
+                    <form class="cloud-ui-form" method="post">
+                        <div class="form-group">
+                            <div class="form-block">
+                                <label class="form-label">开始日期：</label>
+                                <div class="input-block calendar-box">
+                                    <label class="calendar-label" for="startTime"><i class="icon icon-calendar"></i></label>
+                                    <input class="form-input" type="text" name="startTime" id="startTime"
+                                           uib-datepicker-popup="{{format}}" ng-model="startTime" is-open="popupStartTime.opened" datepicker-options="dateOptions" ng-required="true"
+                                           clear-text="清除" close-text="关闭" current-text="今天" alt-input-formats="altInputFormats" ng-click="openStartTime()">
+                                </div>
+                            </div>
+                            <div class="form-block">
+                                <label class="form-label">结束日期：</label>
+                                <div class="input-block calendar-box">
+                                    <label class="calendar-label" for="endTime"><i class="icon icon-calendar"></i></label>
+                                    <input class="form-input" type="text" value="" name="endTime" id="endTime"
+                                           uib-datepicker-popup="{{format}}" ng-model="endTime" is-open="popupEndTime.opened" datepicker-options="dateOptions" ng-required="true"
+                                           clear-text="清除" close-text="关闭" current-text="今天" alt-input-formats="altInputFormats" ng-click="openEndTime()">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="html">
+                        &lt;div class="cloud-ui-datepicker" ng-controller="DatepickerPopupController">
+                            &lt;input class="form-input" type="text" name="startTime" id="startTime"
+                                        uib-datepicker-popup="{{format}}" ng-model="startTime" is-open="popupStartTime.opened"
+                                        datepicker-options="dateOptions" ng-required="true" clear-text="清除" close-text="关闭"
+                                        current-text="今天" alt-input-formats="altInputFormats" ng-click="openStartTime()">
+                        &lt;/div>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="javascript">
+                        app.controller('DatepickerPopupController', function($scope) {
+                            $scope.dateOptions = {
+                                startingDay: 1,
+                                showWeeks: false
+                            };
+
+                            $scope.popupStartTime = {
+                                opened: false
+                            };
+
+                            $scope.openStartTime = function() {
+                                $scope.popupStartTime.opened = true;
+                            };
+
+                            $scope.popupEndTime = {
+                                opened: false
+                            };
+
+                            $scope.openEndTime = function() {
+                                $scope.popupEndTime.opened = true;
+                            };
+                        });
+
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro">Datepicker Popup 中可以使用的属性有：</p>
+            <div class="docs-example-box">
+                <table class="cloud-ui-table" width="100%" cellpadding="0" cellspacing="0">
+                    <colgroup>
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:60%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><span>属性</span></th>
+                        <th><span>默认值</span></th>
+                        <th><span>备注</span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>alt-input-formats</td>
+                        <td>[]</td>
+                        <td>手动输入日期时可接受的格式</td>
+                    </tr>
+                    <tr>
+                        <td>clear-text</td>
+                        <td>clear</td>
+                        <td>清空按钮的文本</td>
+                    </tr>
+                    <tr>
+                        <td>close-on-date-selection</td>
+                        <td>true</td>
+                        <td>选择一个日期后是否关闭日期面板</td>
+                    </tr>
+                    <tr>
+                        <td>close-text</td>
+                        <td>close</td>
+                        <td>关闭按钮的文本</td>
+                    </tr>
+                    <tr>
+                        <td>current-text</td>
+                        <td>today</td>
+                        <td>今天按钮的文本</td>
+                    </tr>
+                    <tr>
+                        <td>datepicker-append-to-body</td>
+                        <td>false</td>
+                        <td>是否将日期面板放在body元素中</td>
+                    </tr>
+                    <tr>
+                        <td>datepicker-options</td>
+                        <td></td>
+                        <td>对Datepicker控件的配置</td>
+                    </tr>
+                    <tr>
+                        <td>is-open</td>
+                        <td>false</td>
+                        <td>是否显示日期面板</td>
+                    </tr>
+                    <tr>
+                        <td>on-open-focus</td>
+                        <td>true</td>
+                        <td>打开日期面板时是否获取焦点</td>
+                    </tr>
+                    <tr>
+                        <td>show-button-bar</td>
+                        <td>true</td>
+                        <td>是否在日期面板下方显示”今天”,”关闭”等按钮</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>text</td>
+                        <td>可以改为date|datetime-local|month，这样会改变日期面板的日期格式化。</td>
+                    </tr>
+                    <tr>
+                        <td>popup-placement</td>
+                        <td>auto bottom-left</td>
+                        <td><p>在位置前加一个auto,表示日期面板会定位在它最近一个可以滚动的父元素中.可以设置的位置有:</p>top top-left&nbsp;&nbsp;top-right&nbsp;&nbsp;bottom&nbsp;&nbsp;bottom-left&nbsp;&nbsp;bottom-right&nbsp;&nbsp;left&nbsp;&nbsp;left-top &nbsp;&nbsp;left-bottom&nbsp;&nbsp;right&nbsp;&nbsp;right-top&nbsp;&nbsp;right-bottom</td>
+                    </tr>
+                    <tr>
+                        <td>uib-datepicker-popup</td>
+                        <td>yyyy-MM-dd</td>
+                        <td>显示日期的格式。可使用的格式见上面的列表。</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--图表-->
+        <div id="chart" class="cu-docs-section">
+            <h3 class="docs-header">图表</h3>
+            <p class="docs-intro">图表插件统一使用 <span class="code-label">Chart.js</span>，官方文档地址：<a class="color-blue" href="http://www.chartjs.org/">http://www.chartjs.org/</a>，中文文档地址：<a class="color-blue" href="http://www.bootcss.com/p/chart.js/docs/">http://www.bootcss.com/p/chart.js/docs/</a>。</p>
+            <p class="docs-intro">使用时确保项目已经引入 <span class="code-label">Chart.min.js</span> 。</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="html">
+                        &lt;script type="text/javascript" src="//cdn.bootcss.com/Chart.js/2.4.0/Chart.min.js">&lt;/script>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">示例</p>
+            <div class="docs-example-box">
+                <div class="docs-example-item" style="width: 70%">
+                    <p class="docs-intro">曲线图</p>
+                    <div class="chart-box">
+                        <canvas class="chart-area"></canvas>
+                    </div>
+                </div>
+                <div class="docs-example-item" style="width: 45%">
+                    <p class="docs-intro">饼图</p>
+                    <div class="chart-box">
+                        <canvas class="chart-area"></canvas>
+                    </div>
+                </div>
+                <div class="docs-example-item" style="width: 45%">
+                    <p class="docs-intro">环形图</p>
+                    <div class="chart-box">
+                        <canvas class="chart-area"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p class="docs-intro color-blue">html结构</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="code">
+                        &lt;canvas class="chart-area">&lt;/canvas>
+                    </code>
+                </pre>
+            </div>
+            <p class="docs-intro color-blue">js方法</p>
+            <div class="docs-code-box">
+                <pre class="pre">
+                    <code class="javascript">
+                        var ctx = $(".chart-area").get(0).getContext("2d");
+
+                        window.myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: [
+                                    "标签1",
+                                    "标签2",
+                                    "标签3",
+                                    "标签4",
+                                    "标签5"
+                                ],
+                                datasets : [{
+                                    label: "曲线1",
+                                    fill: false,
+                                    lineTension: 0,
+                                    borderColor: "rgba(75,192,192,1)",
+                                    data: [67, 52, 27, 55, 80, 63],
+                                    spanGaps: false
+                                    },{
+                                    label: "曲线2",
+                                    fill: true,
+                                    lineTension: 0.4,
+                                    backgroundColor: "rgba(249, 79, 118,0.4)",
+                                    borderColor: "rgba(249, 79, 118,1)",
+                                    data: [28, 60, 42, 18, 96, 100]
+                                    }]
+                                },
+                                options:{
+                                    responsive: true,
+                                    legend: {
+                                        position: 'bottom'//图例位置
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: ''
+                                    },
+                                    animation: {
+                                        animateScale: true,
+                                        animateRotate: true
+                                    }
+                                }
+                            });
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<!--常规模态框-->
+<div class="modal fade cloud-ui-modal" id="modalNormal" tabindex="-1" role="dialog" aria-labelledby="normalModalLabel" aria-hidden="true">
+    <div class="modal-center">
+        <div class="modal-dialog modal-normal" role="document">
+            <div class="modal-content">
+                <div class="header">
+                    <h2 class="modal-title" id="normalModalLabel">新增组织机构</h2>
+                    <i class="icon icon-close-circle" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+                <div class="body">
+                    <div>这里是内容</div>
+                </div>
+                <div class="footer">
+                    <div class="btn-box">
+                        <button class="btn-big bg-green" type="button" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--小模态框-->
+<div class="modal fade cloud-ui-modal" id="modalSmall" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-hidden="true">
+    <div class="modal-center">
+        <div class="modal-dialog modal-small">
+            <div class="modal-content">
+                <div class="header">
+                    <h2 class="modal-title" id="smallModalLabel">新增组织机构</h2>
+                    <i class="icon icon-close-circle" data-dismiss="modal"></i>
+                </div>
+                <div class="body">
+                    <div>这里是内容</div>
+                </div>
+                <div class="footer">
+                    <div class="btn-box">
+                        <button class="btn-normal bg-green" type="button" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--大模态框-->
+<div class="modal fade cloud-ui-modal" id="modalBig" tabindex="-1" role="dialog" aria-labelledby="bigModalLabel" aria-hidden="true">
+    <div class="modal-center">
+        <div class="modal-dialog modal-big">
+            <div class="modal-content">
+                <div class="header">
+                    <h2 class="modal-title" id="bigModalLabel">新增组织机构</h2>
+                    <i class="icon icon-close-circle" data-dismiss="modal"></i>
+                </div>
+                <div class="body">
+                    <div>这里是内容</div>
+                </div>
+                <div class="footer">
+                    <div class="btn-box">
+                        <button class="btn-big bg-green" type="button" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--自适应模态框-->
+<div class="modal fade cloud-ui-modal" id="modalAdaptive" tabindex="-1" role="dialog" aria-labelledby="adaptiveModalLabel" aria-hidden="true">
+    <div class="modal-center">
+        <div class="modal-dialog modal-adaptive">
+            <div class="modal-content">
+                <div class="header">
+                    <h2 class="modal-title" id="adaptiveModalLabel">新增组织机构</h2>
+                    <i class="icon icon-close-circle" data-dismiss="modal"></i>
+                </div>
+                <div class="body">
+                    <div style="width: 800px; height: 200px; border: 1px solid #e2e4ea;">这里是内容</div>
+                </div>
+                <div class="footer">
+                    <div class="btn-box">
+                        <button class="btn-spirit" type="button" data-dismiss="modal">取消</button>
+                        <button class="btn-normal bg-green" type="button" data-dismiss="modal">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Jquery 文件-->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<!--Bootstrap 核心 JS 文件-->
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--Angular 核心 JS 文件-->
+<script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.6.1/angular.min.js"></script>
+<!--Angular-UI 核心 JS 文件-->
+<script type="text/javascript" src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/angular-locale_zh-cn.js"></script>
+<script type="text/javascript" src="js/cloud.js"></script>
+<script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

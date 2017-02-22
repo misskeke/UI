@@ -1,0 +1,59 @@
+@import "../config/mixin";
+@import "../config/variable";
+
+//按钮基础样式
+.btn() {
+  display: inline-block;
+  border-radius: 4px;
+  text-align: center;
+  color: @fontColorWhite;
+  .transition();
+}
+
+//按钮大小
+.btn-normal {
+  min-width: 100px;
+  height: 32px;
+  padding: 0 15px;
+  font-size: @fontSize;
+  line-height: 32px;
+  .btn();
+}
+
+.btn-big {
+  font-size: @fontSizeH3;
+  line-height: 40px;
+  .size(180px, 40px);
+  .btn();
+}
+
+//幽灵按钮
+.btn-spirit {
+  border: 1px solid @fontColorMain;
+  background-color: @bgWhite;
+  .btn-normal();
+  color: @fontColorMain;
+  &:hover {
+    background-color: #b1b7ca;
+  }
+  &:active {
+    background-color: #7c8397;
+  }
+}
+
+//禁止按钮
+.btn-disabled {
+  background-color: @fontColorDisable;
+  color: @fontColorDark;
+  cursor: not-allowed;
+  .btn-normal();
+}
+
+//按钮组
+.btn-box {
+  text-align: center;
+  font-size: 0;
+  button {
+    margin: 0 10px;
+  }
+}

@@ -1,0 +1,175 @@
+@import "../config/mixin";
+@import "../config/variable";
+
+.@{module-name}-datepicker {
+  .uib-datepicker-popup.dropdown-menu {
+    margin-top: -1px;
+    padding: 5px 2px;
+    border: 1px solid @borderColor;
+    border-radius: 0;
+    .btn {
+      border: none;
+      border-radius: 0;
+      outline: none;
+    }
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+  }
+
+  .small, small {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .uib-datepicker .uib-title {
+    background-color: #5093e1;
+    color: #fff;
+    border:none;
+    &:hover {
+      background-color: #5093e1;
+    }
+  }
+
+  .uib-daypicker {
+    outline: none;
+    &:active {
+      outline: none;
+    }
+    .pull-left, .pull-right {
+      width: 46px;
+      padding: 0 20px;
+      border: none;
+      background-color: #5093e1;
+      outline: none;
+      &:hover {
+        color: #fff;
+        background-color: #5093e1;
+      }
+    }
+  }
+
+  .glyphicon {
+    top: -2px
+  }
+
+  .glyphicon-chevron-left {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-right: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  .glyphicon-chevron-left:before {
+    content: '';
+  }
+
+  .glyphicon-chevron-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-left: 6px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  .glyphicon-chevron-right:before {
+    content: "";
+  }
+
+  .uib-day button {
+    border: none;
+  }
+
+  .uib-monthpicker {
+    .pull-left, .pull-right, th {
+      background-color: #5093e1;
+    }
+  }
+
+  .uib-yearpicker {
+    .pull-left, .pull-right, th {
+      background-color: #5093e1;
+    }
+  }
+
+  .uib-month button, .uib-year button {
+    margin: 4px 0;
+  }
+
+  .uib-button-bar {
+    .btn-sm {
+      width: 52px;
+    }
+  }
+
+  .btn-group-sm>.btn, .btn-sm {
+    height: 36px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    text-align: center;
+    line-height: 36px;
+    transition: all 0.3s ease-out 0s;
+    outline: none;
+  }
+
+  .btn.active, .btn:active {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .btn-default.active, .btn-default:active, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #5093e1;
+    border: none;
+    outline: none;
+    .text-info, .text-muted {
+      color: #fff;
+    }
+  }
+
+  .btn-info.active.focus, .btn-info.active:focus, .btn-info.active:hover, .btn-info:active.focus, .btn-info:active:focus, .btn-info:active:hover, .open>.dropdown-toggle.btn-info.focus, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover {
+    color: #fff;
+    background-color: #5093e1;
+    border: none;
+  }
+
+  .btn-default.active, .btn-default:active, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #5093e1;
+    border: none;
+    outline: none;
+  }
+
+  .btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+    color: #fff;
+    background-color: #5093e1;
+    border: none;
+    outline: none;
+  }
+
+  .text-info {
+    color: #333;
+  }
+
+  .text-muted {
+    color: #f1f1f1;
+  }
+
+  .btn-default {
+    color: #999;
+  }
+}

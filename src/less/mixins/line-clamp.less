@@ -1,0 +1,12 @@
+@import "word-break";
+@import "text-overflow";
+
+.line-clamp(@line, @line-height){
+  display: -webkit-box;
+  max-height: @line*@line-height;
+  line-height: @line-height;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @line;
+  .word-break();
+  .text-overflow();
+}

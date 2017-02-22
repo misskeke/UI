@@ -1,0 +1,102 @@
+@import "../config/mixin";
+@import "../config/variable";
+
+.header-bar {
+  height: 64px;
+  padding: 0 20px;
+  background-color: @colorGrayDark;
+  .clearfix();
+  .site-box {
+    float: left;
+    width: 200px;
+    margin-top: 19px;
+    color: @fontColorWhite;
+    .clearfix();
+    .icon {
+      float: left;
+      margin-right: 10px;
+      font-size: 26px;
+      line-height: 26px;
+    }
+    .site-name {
+      float: left;
+      font-size: @fontSizeH2;
+      line-height: 30px;
+    }
+  }
+
+  .nav-list {
+    float: left;
+    margin-top: 13px;
+    color: @fontColorWhite;
+  }
+
+  .nav-list-box {
+    .clearfix();
+  }
+
+  .nav-item {
+    float: left;
+    margin-left: 20px;
+    border-radius: 3px;
+    text-align: center;
+    .size(130px, 38px);
+    &:hover, &.active {
+      background-color: @colorBlueMain;
+      .icon, .nav-title {
+        color: @fontColorWhite;
+      }
+    }
+    .nav-box {
+      display: inline-block;
+      .clearfix();
+    }
+    .icon {
+      float: left;
+      margin-top: 7px;
+      margin-right: 10px;
+      font-size: 24px;
+      line-height: 24px;
+      color: @fontNavMain;
+    }
+    .nav-title {
+      float: left;
+      font-size: @fontSizeH2;
+      line-height: 38px;
+      color: @fontNavMain;
+    }
+  }
+
+  .nav-info {
+    float: right;
+    color: @fontNavMain;
+    .clearfix();
+
+    .user-box, .logout-box {
+      float: left;
+      margin-top: 22px;
+      line-height: 20px;
+      .clearfix();
+      .icon, span {
+        float: left;
+        margin-left: 10px;
+      }
+      .icon {
+        font-size: 20px;
+      }
+      span {
+        font-size: @fontSizeH2;
+      }
+    }
+
+    .user-box {
+      margin-right: 20px;
+    }
+
+    .logout-box {
+      a {
+        color: @fontNavMain;
+      }
+    }
+  }
+}

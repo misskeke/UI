@@ -1,0 +1,37 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+//  复选框
+.form-checkbox {
+  position: relative;
+  display: inline-block;
+  border: 1px solid @borderColor;
+  background-color: @bgWhite;
+  .size(20px, 20px);
+  label {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    max-width: none;
+    margin-bottom: 0;
+    border-color: transparent;
+    .size(20px, 20px);
+  }
+  input {
+    display: none;
+  }
+  input[type="checkbox"]:checked + label {
+    background-color: @colorBlueMain;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 7px;
+      display: block;
+      border: 2px solid @bgWhite;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      .size(7px, 14px);
+    }
+  }
+}

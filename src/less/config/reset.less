@@ -1,0 +1,117 @@
+/**
+ * 用途: 重置css默认样式
+ * 作者: kezh
+ * 日期: 2017/01/13
+ * 说明: 本reset文件只重置项目中使用到的标签的样式
+ * 由于本项目引用了bootstrap.css,因此和bootstrap.css中重复的部分将省略
+ * 同时bootstrap.css中需要重置的公共样式也在此设置
+ */
+
+@import "variable";
+
+//设置默认文字样式
+html {
+  font-family: @fontFamily;
+  line-height: 1.5;
+  font-size: @fontSize;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+//清除元素默认的margin
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+form,
+fieldset,
+button,
+input,
+select,
+ul,
+ol,
+dl,
+dd,
+hr{
+  padding: 0;
+  margin: 0;
+}
+
+//设置字体样式
+h1,
+h2,
+h3,
+h4,
+i,
+em,
+b,
+strong,
+th,
+dt{
+  font-weight: 100;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+button,
+input {
+  font-family: @fontFamily;
+}
+
+//设置链接样式
+a {
+  text-decoration: none;
+  &:active, &:hover, &:link, &:visited {
+    text-decoration: none;
+  }
+}
+
+//设置列表样式
+ul,
+ol {
+  list-style: none;
+}
+
+//设置表单样式
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  border: 1px solid @borderColorFocus;
+}
+
+select {
+  border: none;
+  outline: none;
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-x:hidden
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

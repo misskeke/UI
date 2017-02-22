@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>云纪管理端 UI 框架 Cloud-UI 说明文档</title>
+    <!--Bootstrap 核心 CSS 文件-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Cloud-UI 核心 CSS 文件-->
+    <link rel="stylesheet" href="../dist/css/cloud-ui.min.css">
+    <link rel="stylesheet" href="css/cloud-doc.css">
+    <link rel="stylesheet" href="css/default.css">
+</head>
+<body class="cloud-doc">
+    <div class="logo-box">
+        <div class="svg-box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs></defs><title>云纪管理端UI框架Cloud-broker-UI</title><path class="cls-1" d="M17.87,26l1.4-1.3h4.1c3.63.16,5-1.82,5.65-4.22a6,6,0,0,0-2.49-6.89,2.16,2.16,0,0,0-3.16.41l-6.11,9H14.6s-4.06-6.24-4.23-6.52c1,0,1.88,0,2.76,0L16,20.64l3.83-5.83a6.63,6.63,0,0,1,3.68-3A6.31,6.31,0,0,1,30.34,14a7.85,7.85,0,0,1,1.54,6.46A6.73,6.73,0,0,1,26.07,26Z"/><path class="cls-1" d="M.32,16.37c.87-3.14,4.06-5,7.31-5a8.18,8.18,0,0,1,6.63-5.31c6.49-.73,9,3.53,9,3.53l-1.65,1a7.23,7.23,0,0,0-5.51-2.52C10.79,7.8,8.8,12.66,8.8,12.66A6,6,0,0,0,6.94,24.42a11.64,11.64,0,0,0,1.88.27h3.93L14.15,26H6c-.14-.07-4.21,0-5.62-5A8.46,8.46,0,0,1,.32,16.37Z"/><circle class="cls-2" cx="16.04" cy="12.77" r="1.82"/><polygon class="cls-1" points="16.71 15.23 15.37 15.23 14.89 17.85 16.03 19.27 17.18 17.85 16.71 15.23"/></svg>
+        </div>
+    </div>
+    <div class="cu-section">
+        <h1 class="cu-title">Hello,Cloud-UI!</h1>
+        <h2 class="cu-describe">服务于云纪管理端业务的 UI 组件库</h2>
+        <nav class="cu-link">
+            <a class="cu-link-item" href="style.html">样式</a>
+            <a class="cu-link-item" href="component.html">组件</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="cu-docs-section">
+                <h3 class="docs-header">使用</h3>
+                <p class="docs-intro"><span class="docs-intro-label">SVN地址:</span><a class="color-blue" href="https://192.168.57.168/BrokerNet/VIPSTU/trunk/Sources/public/cloudUI">https://192.168.57.168/BrokerNet/VIPSTU/trunk/Sources/public/cloudUI</a></p>
+                <p class="docs-intro"><span class="docs-intro-label">github地址:</span><a class="color-blue" href="https://github.com/cloud-templates/cloud-ui">https://github.com/cloud-templates/cloud-ui</a></p>
+                <p class="docs-intro"><span class="docs-intro-label">说明:</span>Cloud-UI 是基于 <span class="code-label">Bootstrap</span> 和 <span class="code-label">AngularUI</span>  的 PC 端 UI 组件库，应用于云纪管理端业务。Cloud-UI 遵循云纪管理端统一的样式规范，有特定的 <span class="code-label">HTML</span> 、 <span class="code-label">CSS</span> 和 <span class="code-label">JavaScript</span> 代码片段，使用时需严格遵循这些片段结构和规则。</p>
+                <p class="docs-intro color-blue">目录结构</p>
+                <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="code">
+                            └─cloudUI
+                                ├─dist         ---> 生成目录
+                                │  ├─css
+                                │  └─fonts
+                                ├─src          ---> 开发目录
+                                │  ├─fonts
+                                │  └─less
+                                └─docs         ---> 文档目录
+                                    ├─css
+                                    ├─js
+                                    ├─less
+                                    ├─component.html
+                                    ├─start.html
+                                    └─style.html
+                        </code>
+                    </pre>
+                </div>
+                <p class="docs-intro">运用到项目中，确保项目已经引入以下文件:</p>
+                <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="code">
+                            &lt;head>
+                                &lt;!--Bootstrap 核心 CSS 文件-->
+                                &lt;link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                                &lt;!--Cloud-UI 核心 CSS 文件-->
+                                &lt;link rel="stylesheet" href="../dist/css/cloud-ui.min.css">
+                            &lt;/head>
+                            &lt;body>
+                                &lt;!--Jquery 文件-->
+                                &lt;script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js">&lt;/script>
+                                &lt;!--Bootstrap 核心 JS 文件-->
+                                &lt;script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js">&lt;/script>
+                                &lt;!--Angular 核心 JS 文件-->
+                                &lt;script type="text/javascript" src="//cdn.bootcss.com/angular.js/1.6.1/angular.min.js">&lt;/script>
+                                &lt;!--Angular-UI 核心 JS 文件-->
+                                &lt;script type="text/javascript" src="//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js">&lt;/script>
+                            &lt;/body>
+                        </code>
+                    </pre>
+                </div>
+                <p class="docs-intro">运用组件时，在 <span class="code-label">module</span> 中需要指定依赖的 module :</p>
+                <div class="docs-code-box">
+                    <pre class="pre">
+                        <code class="code javascript">
+                            angular.module('cloudApp', ['ui.bootstrap']);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cloud.js"></script>
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

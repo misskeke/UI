@@ -1,0 +1,58 @@
+@import "../config/variable";
+@import "../config/mixin";
+
+.@{module-name}-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid @borderColor;
+  background-color: @bgWhite;
+  font-size: @fontSize;
+  color: @fontTableMain;
+  table-layout: fixed;
+
+  th {
+    height: 36px;
+    padding: 0 20px;
+    background-color: @bgTableHead;
+    font-weight: 100;
+    line-height: 35px;
+    color: @fontColorMain;
+  }
+
+  tr {
+    border-bottom: 1px solid @borderColor;
+    line-height: 24px;
+    .transition();
+    &:hover {
+      background-color: @bgTableList;
+    }
+  }
+
+  td {
+    padding: 7px 20px;
+    border-right: 1px solid @borderColor;
+    word-wrap: break-word;
+    &.text-overflow {
+      .text-overflow;
+    }
+  }
+  .table-btn {
+    margin-right: 5px;
+  }
+
+  &.table-center {
+    th {
+      text-align: center;
+    }
+    td {
+      text-align: center;
+    }
+    .center-btns {
+      text-align: center;
+      .center-btn {
+        margin-left: 5px;
+      }
+    }
+  }
+}
